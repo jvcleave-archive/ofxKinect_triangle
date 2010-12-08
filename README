@@ -1,0 +1,3 @@
+Playing off some of he experiments used in the Pedestrian Visualization stuff created for the London OF Lab. I created a multi-threaded ofxContourfinder to break out the blobs into separate depths and recomped them back together so I can play off the depth planes in the future (physics?)
+
+http://vimeo.com/17548899
