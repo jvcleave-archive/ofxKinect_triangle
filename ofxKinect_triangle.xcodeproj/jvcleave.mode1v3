@@ -268,6 +268,7 @@
 								<string>E4B69B4A0A3A1720003C02F2</string>
 								<string>E4B69E1C0A3A1BDC003C02F2</string>
 								<string>BB4B018C10F6955C006C3DED</string>
+								<string>03CBFAD612D705B500AF40F5</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
@@ -328,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>038C17A712D7102500FD5C10</string>
+										<string>03E37D6E12D7172A001DF246</string>
 										<key>history</key>
 										<array>
 											<string>033CA5B412AC35AE009F90F8</string>
@@ -339,8 +340,6 @@
 											<string>03215A8712ACE5FB00A73397</string>
 											<string>03215A8A12ACE5FB00A73397</string>
 											<string>03215A8C12ACE5FB00A73397</string>
-											<string>03215A9312ACE5FB00A73397</string>
-											<string>0339CEEE12ACF1E0009F1E2F</string>
 											<string>0339CEF012ACF1E0009F1E2F</string>
 											<string>0339CEF112ACF1E0009F1E2F</string>
 											<string>0339CEF312ACF1E0009F1E2F</string>
@@ -356,7 +355,7 @@
 											<string>03CBFB6F12D70D8800AF40F5</string>
 											<string>038C17A512D7102500FD5C10</string>
 											<string>038C17A612D7102500FD5C10</string>
-											<string>03CBFB6D12D70D8800AF40F5</string>
+											<string>038C17A712D7102500FD5C10</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -414,9 +413,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>038C174212D70E6A00FD5C10</string>
+				<string>03E37D6F12D7172A001DF246</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>038C174312D70E6A00FD5C10</string>
+				<string>03E37D7012D7172A001DF246</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -554,12 +553,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>038C17A912D7102500FD5C10</string>
-		<string>038C17AA12D7102500FD5C10</string>
 		<string>03AF069A12AB8D7B00F4E39E</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Volumes/WORK_IN_PROGRESS/EXPERIMENTAL/OPENFRAMEWORKS/openframeworks_git/apps/jvcApps/ofxKinect_triangle (trunk)/ofxKinect_triangle.xcodeproj</string>
+		<string>/Volumes/WORK_IN_PROGRESS/EXPERIMENTAL/OPENFRAMEWORKS/openframeworks_git/apps/TO_GITHUB/ofxKinect_triangle/ofxKinect_triangle.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 89 2560 1489 0 0 2560 1578 </string>
@@ -600,8 +596,6 @@
 							<string>215pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -641,7 +635,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>03AF069A12AB8D7B00F4E39E</string>
-				<string>038C174412D70E6A00FD5C10</string>
+				<string>03E37D7112D7172A001DF246</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -654,7 +648,7 @@
 			<key>WindowToolGUID</key>
 			<string>03AF069A12AB8D7B00F4E39E</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -763,13 +757,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>038C174512D70E6A00FD5C10</string>
+				<string>03E37D7212D7172A001DF246</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>038C174612D70E6A00FD5C10</string>
-				<string>038C174712D70E6A00FD5C10</string>
-				<string>038C174812D70E6A00FD5C10</string>
-				<string>038C174912D70E6A00FD5C10</string>
-				<string>038C174A12D70E6A00FD5C10</string>
+				<string>03E37D7312D7172A001DF246</string>
+				<string>03E37D7412D7172A001DF246</string>
+				<string>03E37D7512D7172A001DF246</string>
+				<string>03E37D7612D7172A001DF246</string>
+				<string>03E37D7712D7172A001DF246</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
