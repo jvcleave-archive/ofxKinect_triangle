@@ -25,7 +25,7 @@
     </Toggle_doDrawTriangles>
     <Toggle_doSimpleTriangles>
         <name>doSimpleTriangles</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doSimpleTriangles>
     <SliderFloat_smoothPct>
         <name>smoothPct</name>
