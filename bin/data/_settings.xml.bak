@@ -1,7 +1,7 @@
 <controls>
     <Toggle_doDrawColorImage>
         <name>doDrawColorImage</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDrawColorImage>
     <Toggle_doDrawGrayImage>
         <name>doDrawGrayImage</name>
@@ -21,7 +21,7 @@
     </Toggle_doDrawSimpleContours>
     <Toggle_doDrawTriangles>
         <name>doDrawTriangles</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDrawTriangles>
     <Toggle_doSimpleTriangles>
         <name>doSimpleTriangles</name>
