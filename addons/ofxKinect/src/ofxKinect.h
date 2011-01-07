@@ -5,21 +5,23 @@
 #include "ofGraphics.h"
 #include "ofTypes.h"
 
+#include "ofxBase3DVideo.h"
+
 #include "ofxThread.h"
-#include "ofxVectorMath.h"
 
 #include <libusb.h>
 #include "libfreenect.h"
+#include "ofxKinectCalibration.h"
 
-class ofxKinect : public ofBaseVideo, protected ofxThread{
+class ofxKinect : public ofxBase3DVideo, protected ofxThread{
 
 	public :
 
 		ofxKinect();
 		virtual ~ofxKinect();
 
-		/// is the current frame new?
-		bool isFrameNew() {return true;}
+		/// are the current frames new?
+		bool isFrameNew();
         
 		/// open the connection and start grabbing images
 		bool open();
@@ -28,7 +30,7 @@ class ofxKinect : public ofBaseVideo, protected ofxThread{
 		void close();
         
 		/// initialize resources, must be called before open()
-		bool init(bool bTexture=true);
+		bool init(bool infrared=false, bool bTexture=true);
 		
 		bool setCameraTiltAngle(float angleInDegrees);
         
@@ -40,15 +42,18 @@ class ofxKinect : public ofBaseVideo, protected ofxThread{
 	
 		float getDistanceAt(int x, int y);
 		float getDistanceAt(const ofPoint & p);
+		
+		/// calculates the coordinate in the world for the pixel (perspective calculation). Center  of image is (0.0)
+		ofxPoint3f getWorldCoordinateFor(int x, int y);
 
 		ofColor	getColorAt(int x, int y);
 		ofColor getColorAt(const ofPoint & p);
 
 		ofColor getCalibratedColorAt(int x, int y);
-		ofColor getCalibratedColorAt(const ofPoint & p);
+		ofColor getCalibratedColorAt(const ofPoint & p);		
 
-		ofxMatrix4x4 getRGBDepthMatrix();
-		void setRGBDepthMatrix(const ofxMatrix4x4 & matrix);
+		//ofxMatrix4x4 getRGBDepthMatrix();
+		//void setRGBDepthMatrix(const ofxMatrix4x4 & matrix);
 		
 		float 			getHeight();
 		float 			getWidth();
@@ -89,9 +94,13 @@ class ofxKinect : public ofBaseVideo, protected ofxThread{
 		void 			setUseTexture(bool bUse);
 		void 			draw(float x, float y, float w, float h);
 		void 			draw(float x, float y);
+		void			draw(const ofPoint & point);
+		void			draw(const ofRectangle & rect);
 		
 		void 			drawDepth(float x, float y, float w, float h);
 		void 			drawDepth(float x, float y);
+		void			drawDepth(const ofPoint & point);
+		void			drawDepth(const ofRectangle & rect);
 
 		const static int	width = 640;
 		const static int	height = 480;
@@ -100,16 +109,12 @@ class ofxKinect : public ofBaseVideo, protected ofxThread{
 
 		bool					bUseTexture;
 		ofTexture				depthTex;			// the depth texture
-		ofTexture 				rgbTex;				// the RGB texture
+		ofTexture 				videoTex;				// the RGB texture
 		bool 					bVerbose;
 		bool 					bGrabberInited;
 		
-		unsigned char *			depthPixels;
-		unsigned char *			rgbPixels;
-		unsigned char *			calibratedRGBPixels;
-		
+		unsigned char *			videoPixels;
 		unsigned short *		depthPixelsRaw;
-		float * 				distancePixels;
 		
 		ofPoint rawAccel;
 		ofPoint mksAccel;
@@ -117,26 +122,28 @@ class ofxKinect : public ofBaseVideo, protected ofxThread{
 		float targetTiltAngleDeg;
 		bool bTiltNeedsApplying;
 		
+
     private:
 
 		freenect_context *	kinectContext;	// kinect context handle
 		freenect_device * 	kinectDevice;	// kinect device handle
 		
 		unsigned short *	depthPixelsBack;	// depth back
-		unsigned char *		rgbPixelsBack;		// rgb back
+		unsigned char *		videoPixelsBack;		// rgb back
 		
 		bool bNeedsUpdate;
 		bool bUpdateTex;
-		
-		bool bDepthNearValueWhite;
-		
-		ofxMatrix4x4		rgbDepthMatrix;
+
+		bool				bInfrared;
+		int					bytespp;
 
 		// libfreenect callbacks
-		static void grabDepthFrame(freenect_device *dev, freenect_depth *depth, uint32_t timestamp);
-		static void grabRgbFrame(freenect_device *dev, freenect_pixel *rgb, uint32_t timestamp);
+		static void grabDepthFrame(freenect_device *dev, void *depth, uint32_t timestamp);
+		static void grabRgbFrame(freenect_device *dev, void *rgb, uint32_t timestamp);
     
 		// thread function
 		void threadedFunction();
+
+		ofxKinectCalibration calibration;
 };
 

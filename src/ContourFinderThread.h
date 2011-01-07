@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxRuiThread.h"
 #include "ofxOpenCv.h"
-
+//pre-lib update
 class ContourFinderThread:public ofxRuiThread{
 public:
 	int count;

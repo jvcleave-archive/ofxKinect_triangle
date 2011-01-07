@@ -43,7 +43,7 @@ bool forceGuiDraw = true;
 float smoothPct = 0.75f;
 int tolerance = 4;
 //
-int numThreads = 16;
+int numThreads = 4;
 float thresholdStep = 2.0f;
 int farThresholdStep;
 bool hasStarted = false;
@@ -60,12 +60,12 @@ void MultiThreadedTriangle::setup()
 	kinect.init();
 	kinect.enableDepthNearValueWhite(true);
 	kinect.setVerbose(true);
-	kinect.close();
+	//kinect.close();
 	kinect.open();
 	//
 	colorImg.allocate(videoWidth, videoHeight);
-
-	
+	//useCalibrated acting strange after ofkKinect update
+	//gui.addToggle("useCalibrated", useCalibrated);
 	gui.addToggle("doDrawColorImage", doDrawColorImage);
 	gui.addToggle("doDrawGrayImage", doDrawGrayImage);
 	gui.addToggle("doDrawKinectDepth", doDrawKinectDepth);
@@ -291,6 +291,10 @@ void MultiThreadedTriangle::mouseReleased(int x, int y, int button){
 void MultiThreadedTriangle::windowResized(int w, int h){
 	
 }
+void MultiThreadedTriangle::exit()
+{
+	kinect.close();
+}
 unsigned char * MultiThreadedTriangle::getKinectPixels()
 {
 	if(!useCalibrated)
@@ -298,6 +302,7 @@ unsigned char * MultiThreadedTriangle::getKinectPixels()
 		//
 		return kinect.getPixels();
 	}else {
+		//kinect.getPixels();
 		return kinect.getCalibratedRGBPixels();
 	}
 	
