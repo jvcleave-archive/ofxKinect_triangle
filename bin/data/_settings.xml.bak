@@ -1,7 +1,7 @@
 <controls>
     <Toggle_doDrawColorImage>
         <name>doDrawColorImage</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_doDrawColorImage>
     <Toggle_doDrawGrayImage>
         <name>doDrawGrayImage</name>
@@ -25,7 +25,7 @@
     </Toggle_doDrawTriangles>
     <Toggle_doSimpleTriangles>
         <name>doSimpleTriangles</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_doSimpleTriangles>
     <SliderFloat_smoothPct>
         <name>smoothPct</name>
